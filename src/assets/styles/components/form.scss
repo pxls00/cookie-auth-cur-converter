@@ -19,6 +19,7 @@
       padding: 0 3px;
       left: 10px;
       top: 0%;
+      color: map-get($purple, 'base');
       transform: translateY(-50%);
     }
     &--input {
