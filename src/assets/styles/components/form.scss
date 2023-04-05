@@ -1,0 +1,62 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  border-radius: 16px;
+  background: map-get($colors, 'white' );
+  &__title {
+    font-size: 18px;
+  }
+  &__field {
+    width: 100%;
+    margin: 15px 0;
+    position: relative;
+    &--title {
+      font-size: 13px;
+      font-weight: 400;
+      position: absolute;
+      background: map-get($colors, 'white' );
+      padding: 0 3px;
+      left: 10px;
+      top: 0%;
+      transform: translateY(-50%);
+    }
+    &--input {
+      outline: none;
+      background: none;
+      width: 100%;  
+      padding: 10px;
+      font-size: 13px;
+      border-radius: 6px;
+      border: 1px solid map-get($purple, 'base');
+    }
+    &--helper {
+      font-size: 12px;
+      margin-top: 2px;
+      color: map-get($colors, 'red');
+      margin-left: 2px;
+    }
+    &--error {
+      .form__field--title {
+        color: map-get($colors, 'red');
+      }
+      .form__field--input {
+        border-color: map-get($colors, 'red');
+      }
+    }
+    &--success {
+      .form__field--title {
+        color: map-get($green, 'green' );
+      }
+      .form__field--input {
+        border-color: map-get($green, 'green' );
+        
+      }
+    }
+  }
+  &__footer {
+    margin-top: 10px;
+    display: flex;
+    justify-content: flex-end;
+  }
+}

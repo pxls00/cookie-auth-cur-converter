@@ -1,0 +1,31 @@
+$path_to_regular_font_file: '#{$path_to_folder}/open_sans/regular';
+ 
+$path_to_bold_font_file: '#{$path_to_folder}/open_sans/bold'; 
+
+@font-face {
+  font-family: $open_sans;
+
+  src: url('#{$path_to_regular_font_file}.ttf');
+
+  src: local($open_sans),
+    url('#{$path_to_regular_font_file}.woff') format('woff'),
+    url('#{$path_to_regular_font_file}.ttf') format('truetype');
+  font-display: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: $open_sans;
+
+  src: url('#{$path_to_bold_font_file}.ttf');
+
+  src: local($open_sans),
+    url('#{$path_to_bold_font_file}.woff') format('woff'),
+    url('#{$path_to_bold_font_file}.ttf') format('truetype');
+  font-display: auto;
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}

@@ -1,0 +1,36 @@
+
+// Themes
+@import './theme/fonts/index.scss';
+@import './theme/colors/index';
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: $open_sans;
+}
+
+// Components
+@import './components/button.scss';
+@import './components/form.scss';
+
+// Pages
+@import './pages/sign-in.scss';
+
+
+.wrapper {
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-layout {
+  background-color: map-get($purple, 'purple-80');
+  height: 100%;
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}

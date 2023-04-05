@@ -1,0 +1,15 @@
+@import './koamaru.scss';
+@import './saffron.scss';
+@import './blue.scss';
+@import './purple.scss';
+@import './green.scss';
+
+$colors: (
+  'koamaru': $koamaru,
+  'saffron': $saffron,
+  'blue': $blue,
+  'white': #FFFFFF,
+  'purple': $purple,
+  'red': rgb(210, 10, 10),
+  'green': $green
+)
