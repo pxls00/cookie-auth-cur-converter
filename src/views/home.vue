@@ -1,6 +1,8 @@
 <template>
   <main>
-    <div>1 page</div>
+    <button type="button" @click="getToken">
+      GetToken
+    </button>
   </main>
 </template>
 
@@ -11,4 +13,13 @@ export default defineComponent({
   name: 'HomePage'
 })
 
+</script>
+
+<script setup lang="ts">
+import cookieMethods from '@/helpers/cookieMethods'
+import { AUTH_TOKEN_PREFIX } from '@/consts/auth'
+
+function getToken () {
+  console.log(cookieMethods.get(AUTH_TOKEN_PREFIX))
+}
 </script>

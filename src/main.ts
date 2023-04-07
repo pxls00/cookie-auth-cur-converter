@@ -26,5 +26,11 @@ import VueAxios from 'vue-axios'
 app.use(VueAxios, axios)
 app.provide('axios', app.config.globalProperties.axios)
 
+// Toast
+import AppMessage from 'test-vue-message-plugin'
+import 'test-vue-message-plugin/dist/style.css'
+app.use(AppMessage)
+
+
 // provide
 app.mount('#app')

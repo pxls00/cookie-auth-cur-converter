@@ -1,5 +1,6 @@
 
 <template>
+  <app-messages />
   <component :is="layoutName">
     <RouterView />
   </component>

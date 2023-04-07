@@ -24,9 +24,22 @@ export default defineComponent({
 
 <script setup lang="ts">
 import FormSignIn from '@/components/forms/form-sign-in.vue'
-import type RequestBody from '@/interfaces/auth/login-request-body'
+import type RequestBody from '@/interfaces/auth/login-body.js'
+import cookieMethods from '@/helpers/cookieMethods'
+import {AUTH_TOKEN_PREFIX} from '@/consts/auth'
+
+import {useRouter} from 'vue-router'
+
+// import { inject } from 'vue'
+
+// const message = inject('message')
+const router = useRouter()
 
 function onSubmit (requestData: RequestBody) {
   console.log(requestData)
+  cookieMethods.set(AUTH_TOKEN_PREFIX, requestData)
+  router.push({
+    name: 'home'
+  })
 }
 </script>

@@ -34,3 +34,11 @@
   display: flex;
   justify-content: center;
 }
+
+.message__list {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  max-width: 300px;
+  width: 100%;
+}

@@ -56,7 +56,7 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
-import type RequestBody from '@/interfaces/auth/login-request-body'
+import type RequestBody from '@/interfaces/auth/login-body.js'
 
 import { useVuelidate } from '@vuelidate/core'
 import { required, email, minLength } from '@vuelidate/validators'
