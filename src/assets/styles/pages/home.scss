@@ -1,0 +1,30 @@
+.container {
+  max-width: 540px;
+  width: 100%;
+  margin: 0 auto;
+  padding-top: 20px;
+  .form.form--converter {
+    .form__field {
+      &--title {
+        color: map-get($saffron, 'saffron-80');
+      }
+      &--input {
+        border-color: map-get($saffron, 'saffron-80');
+        font-weight: 700;
+      }
+      &--select {
+        padding-left: 6px;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        border-color: map-get($saffron, 'saffron-80');
+        font-weight: 600;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+#frLink1 {
+  display: none !important;
+}

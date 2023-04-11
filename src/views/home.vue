@@ -1,25 +1,32 @@
 <template>
   <main>
-    <button type="button" @click="getToken">
-      GetToken
-    </button>
+    <div class="container">
+      <FormConvertCurrency />
+    </div>
   </main>
 </template>
 
-<script lang='ts'>
+<script lang="ts">
 import { defineComponent } from 'vue'
 
 export default defineComponent({
   name: 'HomePage'
 })
-
 </script>
 
-<script setup lang="ts">
-import cookieMethods from '@/helpers/cookieMethods'
-import { AUTH_TOKEN_PREFIX } from '@/consts/auth'
 
-function getToken () {
-  console.log(cookieMethods.get(AUTH_TOKEN_PREFIX))
-}
+<script setup lang="ts">
+import FormConvertCurrency from '@/components/forms/form-convert-currency.vue'
+import { onMounted } from 'vue'
+
+onMounted(() => {
+  const recaptchaScript = document.createElement('script') as HTMLScriptElement
+  recaptchaScript.setAttribute(
+    'src',
+    '//www.floatrates.com/scripts/converter.js'
+  )
+  recaptchaScript.setAttribute('type', 'text/javascript')
+  recaptchaScript.setAttribute('async', 'true')
+  document.head.appendChild(recaptchaScript)
+})
 </script>

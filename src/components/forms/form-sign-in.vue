@@ -1,7 +1,7 @@
 <template>
   <form 
     v-bind="$attrs"
-    class="form"
+    class="form form--sign-in"
     @submit.prevent="onSubmit"
   >
     <h3 class="form__title">
@@ -56,17 +56,19 @@ export default defineComponent({
 </script>
 
 <script setup lang="ts">
-import type RequestBody from '@/interfaces/auth/login-body.js'
+import type RequestBody from '@/interfaces/auth/login-body'
 
 import { useVuelidate } from '@vuelidate/core'
 import { required, email, minLength } from '@vuelidate/validators'
 import { reactive, computed } from 'vue'
 
-const emits = defineEmits<{
+interface EmitsFormSignInComponent {
   (e: 'submit', formFields: RequestBody): RequestBody
-}>()
+}
 
-const formFields = reactive({
+const emits = defineEmits<EmitsFormSignInComponent>()
+
+const formFields = reactive<RequestBody>({
   email: '',
   password: ''
 })
@@ -80,7 +82,7 @@ const rules = computed(() => {
 
 const v$ = useVuelidate(rules, formFields)
 
-const emailErrors = computed(() => {
+const emailErrors = computed<string[]>(() => {
   const errors: string[] = []
 
   if (!v$.value.email.$dirty) return errors
@@ -92,7 +94,8 @@ const emailErrors = computed(() => {
 
   return errors
 })
-const passwordErrors = computed(() => {
+
+const passwordErrors = computed<string[]>(() => {
   const errors: string[] = []
 
   if (!v$.value.password.$dirty) return errors
@@ -105,7 +108,7 @@ const passwordErrors = computed(() => {
   return errors
 })
 
-function onSubmit () {
+function onSubmit ():void {
   v$.value.$touch()
 
   if (!v$.value.$invalid) {

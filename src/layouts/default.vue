@@ -1,6 +1,5 @@
 <template>
-  <div>
-    default layout
+  <div class="wrapper">
     <RouterView />
   </div>
 </template>

@@ -16,6 +16,7 @@
 
 // Pages
 @import './pages/sign-in.scss';
+@import './pages/home.scss';
 
 
 .wrapper {
@@ -24,6 +25,7 @@
   width: 100%;
   display: flex;
   flex-direction: column;
+  background-color: map-get($saffron, 'saffron-60' );
 }
 
 .auth-layout {
