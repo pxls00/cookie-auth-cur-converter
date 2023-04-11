@@ -31,6 +31,9 @@ import AppMessage from 'test-vue-message-plugin'
 import 'test-vue-message-plugin/dist/style.css'
 app.use(AppMessage)
 
+// Mask
+import { vMaska } from 'maska'
+app.directive('maska', vMaska)
 
 // provide
 app.mount('#app')
