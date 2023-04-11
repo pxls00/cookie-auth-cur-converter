@@ -6,11 +6,26 @@
   background: map-get($colors, 'white' );
   &__title {
     font-size: 18px;
+    margin-bottom: 10px;
   }
   &__field {
     width: 100%;
     margin: 15px 0;
     position: relative;
+    &--flex {
+      display: flex;
+      column-gap: 10px;
+    }
+    &--select {
+      max-width: 130px;
+      min-width: 130px;
+      width: 100%;
+      font-size: 13px;
+      border-radius: 6px;
+      border: 1px solid map-get($purple, 'base');
+      outline: none;
+      background: none;
+    }
     &--title {
       font-size: 13px;
       font-weight: 400;
