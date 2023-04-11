@@ -38,7 +38,6 @@ router.beforeEach((to, from, next) => {
     token = cookie.get(AUTH_TOKEN_PREFIX)
 
   const authRequired = to.meta.auth as boolean
-  console.log(cookie.get(AUTH_TOKEN_PREFIX), authRequired)
   if (authRequired && !token) {
     to.fullPath
     next({ name: 'sign-in'})
